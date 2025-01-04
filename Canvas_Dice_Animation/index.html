@@ -1,0 +1,99 @@
+<!-- index file of dice animation -->
+<!-- Developed by Harshith P -->
+<!-- Github: HarshithPancheru -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        3d Rendeing
+    </title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body id="body">
+    <div id="status">
+        <div><a href="https://github.com/HarshithPancheru/Canvas_Dice_Animation/blob/main/README.md">What is
+                this...?</a></div>
+        <div><a href="https://github.com/HarshithPancheru/Canvas_Dice_Animation.git">Get code</a></div>
+        <div><label>Views: </label><span id="visitorCount">Loading...</span></div>
+    </div>
+    <div id="content">
+        <!-- canvas to draw dice -->
+        <div class="canvas">
+            <canvas id="canbck" height="600" width="600"></canvas>
+            <canvas id="can" height="600" width="600"></canvas>
+        </div>
+
+        <!-- div for settings -->
+        <div id="settings">
+
+            <!--setting dice color picker -->
+            <div>
+                <label for="dice_color">Dice Color: </label>
+                <input type="color" name="dice_color" id="dice_color" value="#ac0000">
+            </div>
+
+            <!--setting transparency of the dice -->
+            <div>
+                <label for="transparency">Dice Transparency: </label>
+                <input type="range" name="transparency" id="transparency" step="0.01" value="0.8" max="1" min="0">
+            </div>
+
+            <!-- setting background color of the dice -->
+            <div>
+                <label for="background_color">Background color: </label>
+                <input type="color" name="background_color" id="background_color" value="#7070ff">
+            </div>
+
+            <!-- setting Dots color -->
+            <div>
+                <label for="point_color">Dot color: </label>
+                <input type="color" name="point_color" id="point_color" value="#ffffff">
+            </div>
+
+            <!-- setting x, y, z speeds -->
+            <div>
+                <label for="x_speed">X-axis speed: </label>
+                <input type="range" name="x_speed" id="x_speed" max="0.1" min="-0.1" value="0.01" step="0.005">
+            </div>
+            <div>
+                <label for="y_speed">Y-axis speed: </label>
+                <input type="range" name="y_speed" id="y_speed" max="0.1" min="-0.1" value="0.01" step="0.005">
+            </div>
+            <div>
+                <label for="z_speed">Z-axis speed: </label>
+                <input type="range" name="z_speed" id="z_speed" max="0.1" min="-0.1" value="0.01" step="0.005">
+            </div>
+
+            <!-- buttons -->
+            <div style="align-self: center;">
+                <button id="animate">ANIMATE</button>
+                <button onclick="dice.reset()">RESET</button>
+            </div>
+        </div>
+    </div>
+    <script type="module">
+        import { CounterAPI } from "https://cdn.jsdelivr.net/npm/counterAPI@9.6.7/dist/counterapi.esm.min.mjs";
+
+        const counter = new CounterAPI();
+
+        function updateVisitorCount() {
+            counter.set("Canvas_Dice_Animation", "visitors", 0).then((res) => {
+                console.log(res)
+                //document.getElementById('visitorCount').innerText = res.Count;
+            })
+        }
+
+        updateVisitorCount();
+    </script>
+    <script type="text/javascript" src="main.js">
+    </script>
+    
+</body>
+
+</html>
